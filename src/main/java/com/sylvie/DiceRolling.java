@@ -6,7 +6,12 @@ public class DiceRolling {
         Dice dice = new Dice();
         for (int i = 0; i < 10; i++) {
             dice.roll();
-            System.out.println(dice.point);
+            System.out.print(dice.point);
+            if (dice.point == 6){
+                System.out.println("*");
+            }else {
+                System.out.println();
+            }
             counters[dice.point-1]++;
 
         }
