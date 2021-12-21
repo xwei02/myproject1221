@@ -7,18 +7,20 @@ public class DiceRolling {
         for (int i = 0; i < 10; i++) {
             dice.roll();
             System.out.print(dice.point);
-            if (dice.point == 6){
+            String s = dice.isMax() ? "*":"";
+            System.out.println(s);
+           /* if (dice.point == 6){
                 System.out.println("*");
             }else {
                 System.out.println();
-            }
+            }*/
             counters[dice.point-1]++;
 
         }
         int max = 0;
         int point = 0;
         for (int i = 0; i < 6; i++) {
-            System.out.println((i+1)+" "+counters[i]+"times");
+            System.out.println((i+1)+" "+counters[i]+" times");
             if (counters[i]>max){
                 max = counters[i];
                 point = i+1;
